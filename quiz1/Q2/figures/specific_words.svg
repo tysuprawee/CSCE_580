@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400">
+<text x="400.0" y="20" text-anchor="middle" font-size="16">Top 20 Specific Words</text>
+<rect x="0.0" y="30.0" width="38.0" height="350.0" fill="steelblue"/>
+<text x="20.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 20.0,395)">python</text>
+<rect x="40.0" y="180.0" width="38.0" height="200.0" fill="steelblue"/>
+<text x="60.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 60.0,395)">software</text>
+<rect x="80.0" y="180.0" width="38.0" height="200.0" fill="steelblue"/>
+<text x="100.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 100.0,395)">sql</text>
+<rect x="120.0" y="180.0" width="38.0" height="200.0" fill="steelblue"/>
+<text x="140.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 140.0,395)">developed</text>
+<rect x="160.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="180.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 180.0,395)">2020</text>
+<rect x="200.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="220.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 220.0,395)">2022</text>
+<rect x="240.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="260.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 260.0,395)">real</text>
+<rect x="280.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="300.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 300.0,395)">music</text>
+<rect x="320.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="340.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 340.0,395)">streaming</text>
+<rect x="360.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="380.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 380.0,395)">designed</text>
+<rect x="400.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="420.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 420.0,395)">data</text>
+<rect x="440.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="460.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 460.0,395)">c</text>
+<rect x="480.0" y="230.0" width="38.0" height="150.0" fill="steelblue"/>
+<text x="500.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 500.0,395)">2019</text>
+<rect x="520.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="540.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 540.0,395)">suprawee</text>
+<rect x="560.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="580.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 580.0,395)">columbia</text>
+<rect x="600.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="620.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 620.0,395)">sc</text>
+<rect x="640.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="660.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 660.0,395)">com</text>
+<rect x="680.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="700.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 700.0,395)">university</text>
+<rect x="720.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="740.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 740.0,395)">2023</text>
+<rect x="760.0" y="280.0" width="38.0" height="100.0" fill="steelblue"/>
+<text x="780.0" y="395" text-anchor="middle" font-size="10" transform="rotate(45 780.0,395)">bachelor</text>
+</svg>
