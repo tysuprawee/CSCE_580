@@ -17,33 +17,33 @@ This README documents the answers for Question 3 of the quiz. Results were produ
 | `CALL COMPLETE` | 31 |
 
 ### a3. Issues discovered
-- **Completion dates disconnected from dispatch dates.** Every `CALL COMPLETE` entry was stamped as either 4 or 5 September 2025, which inflated raw call durations by multiple months. The `cleaned_call_complete` helper replaces the incorrect calendar date with the dispatch date while keeping the recorded time-of-day; when the time appears earlier than dispatch it is rolled into the next day.【F:quiz1/Q3/analyze.py†L27-L57】【F:quiz1/Q3/analyze.py†L233-L242】
-- **Alarm timestamps with inconsistent days.** Several alarms reused the correct time-of-day but a different day or month, creating implausible gaps of days or weeks. The `alarm_baseline` logic realigns anomalous alarms to the dispatch date whenever the difference exceeds 12 hours, yielding realistic response gaps.【F:quiz1/Q3/analyze.py†L59-L83】
-- **Duplicate incident identifiers.** Incident `25-2023` appears twice; downstream reporting should deduplicate or aggregate those entries.【F:quiz1/Q3/analyze.py†L129-L133】
-- **Multi-value dispatch units.** Units are stored as comma-separated strings. The loader splits them into a list so unit counts can be analysed reliably.【F:quiz1/Q3/analyze.py†L105-L116】【F:quiz1/Q3/analyze.py†L186-L205】
+- **Completion dates disconnected from dispatch dates.** Every `CALL COMPLETE` entry was stamped as either 4 or 5 September 2025, which inflated raw call durations by multiple months. The `cleaned_call_complete` helper replaces the incorrect calendar date with the dispatch date while keeping the recorded time-of-day; when the time appears earlier than dispatch it is rolled into the next day.
+- **Alarm timestamps with inconsistent days.** Several alarms reused the correct time-of-day but a different day or month, creating implausible gaps of days or weeks. The `alarm_baseline` logic realigns anomalous alarms to the dispatch date whenever the difference exceeds 12 hours, yielding realistic response gaps.
+- **Duplicate incident identifiers.** Incident `25-2023` appears twice; downstream reporting should deduplicate or aggregate those entries.
+- **Multi-value dispatch units.** Units are stored as comma-separated strings. The loader splits them into a list so unit counts can be analysed reliably.
 
 ### a4. Cleaning outcomes
-- The worst case highlighted above now resolves in 26 minutes instead of five months because the completion timestamp is projected onto the dispatch day.【F:quiz1/Q3/analyze.py†L27-L57】【F:quiz1/Q3/analyze.py†L233-L242】【F:quiz1/Q3/analyze.py†L245-L252】
-- Alarms that were off by a day are realigned, reducing exaggerated delays to zero minutes when appropriate.【F:quiz1/Q3/analyze.py†L59-L83】【F:quiz1/Q3/analyze.py†L209-L214】
+- The worst case highlighted above now resolves in 26 minutes instead of five months because the completion timestamp is projected onto the dispatch day.
+- Alarms that were off by a day are realigned, reducing exaggerated delays to zero minutes when appropriate.
 
 ### a5. Post-cleaning quality check
-- Call resolution now averages **138.6 minutes** (median **12.0 minutes**), with a maximum of **1,439 minutes**—well within a 24-hour window.【F:quiz1/Q3/analyze.py†L141-L168】
-- Alarm-to-dispatch gaps centre on **6.0 minutes** (median **4.0 minutes**), confirming short dispatch delays after realignment.【F:quiz1/Q3/analyze.py†L170-L178】
-- Alarm-to-close durations average **144.2 minutes**, demonstrating consistency between the cleaned timelines.【F:quiz1/Q3/analyze.py†L170-L178】
+- Call resolution now averages **138.6 minutes** (median **12.0 minutes**), with a maximum of **1,439 minutes**—well within a 24-hour window.
+- Alarm-to-dispatch gaps centre on **6.0 minutes** (median **4.0 minutes**), confirming short dispatch delays after realignment.
+- Alarm-to-close durations average **144.2 minutes**, demonstrating consistency between the cleaned timelines.
 
 ## Question b – Exploratory data analysis
 
 ### b1. Average time from call creation to closure
-Calls resolve in **138.6 minutes on average** (median **12.0 minutes**) after the cleaning step described above.【F:quiz1/Q3/analyze.py†L141-L168】
+Calls resolve in **138.6 minutes on average** (median **12.0 minutes**) after the cleaning step described above.
 
 ### b2. Time from alarm to closure
-Interpreting `ALARM DATE TIME` as the earliest recorded event, the window from alarm to final clearance averages **144.2 minutes** with a **17.0 minute** median.【F:quiz1/Q3/analyze.py†L170-L178】 This aligns with the short dispatch gaps observed in part (a5).
+Interpreting `ALARM DATE TIME` as the earliest recorded event, the window from alarm to final clearance averages **144.2 minutes** with a **17.0 minute** median. This aligns with the short dispatch gaps observed in part (a5).
 
 ### b3. Busiest shift
-Shift **A** handled **735** incidents during the study window, slightly ahead of shift C (719) and shift B (677).【F:quiz1/Q3/analyze.py†L180-L188】 The 69 uncategorised rows highlight the need for better shift logging.
+Shift **A** handled **735** incidents during the study window, slightly ahead of shift C (719) and shift B (677). The 69 uncategorised rows highlight the need for better shift logging.
 
 ### b4. Incidents by weekday and hour
-The tables below show call counts by weekday and hour of dispatch. Totals across both halves equal the 2,200 logged incidents.【F:quiz1/Q3/analyze.py†L190-L216】
+The tables below show call counts by weekday and hour of dispatch. Totals across both halves equal the 2,200 logged incidents.
 
 Segment 00–11
 
@@ -74,15 +74,15 @@ Segment 12–23
 ## Question c – Unsupervised learning
 
 ### c1. Clustering methods and quality
-- **K-means (k = 3)** on six engineered features (call duration, alarm-to-dispatch gap, alarm-to-close duration, dispatch hour, units dispatched, shift code) achieved a **silhouette score of 0.304** with inertia **6,968** and cluster sizes {622, 1,327, 182}.【F:quiz1/Q3/analyze.py†L218-L242】
-- **DBSCAN** with ε = 1.25 and `min_samples` = 25 produced four clusters plus 104 noisy points, but the silhouette dropped to **0.239**.【F:quiz1/Q3/analyze.py†L244-L252】
+- **K-means (k = 3)** on six engineered features (call duration, alarm-to-dispatch gap, alarm-to-close duration, dispatch hour, units dispatched, shift code) achieved a **silhouette score of 0.304** with inertia **6,968** and cluster sizes {622, 1,327, 182}.
+- **DBSCAN** with ε = 1.25 and `min_samples` = 25 produced four clusters plus 104 noisy points, but the silhouette dropped to **0.239**.
 
 K-means therefore offered clearer separation for this dataset.
 
 ### c2. Cluster interpretation
 Using the better-performing K-means model, cluster centroids (converted back to the original units) reveal three behavioural groups:
-- **Cluster 2 (n = 1,327)** – short engagements averaging **13.9 minutes** with a single responding unit; these are routine alarms mostly on shift B.【F:quiz1/Q3/analyze.py†L186-L205】【6e6f1b†L1-L4】
-- **Cluster 1 (n = 622)** – slightly longer responses (**20.2 minutes**) that dispatch an average of 2.4 units, representing multi-unit interventions.【6e6f1b†L1-L3】
-- **Cluster 0 (n = 182)** – protracted incidents lasting roughly **24 hours**; they feature longer alarm gaps and likely correspond to extended operations or problem data that merit manual review.【6e6f1b†L3-L4】
+- **Cluster 2 (n = 1,327)** – short engagements averaging **13.9 minutes** with a single responding unit; these are routine alarms mostly on shift B.
+- **Cluster 1 (n = 622)** – slightly longer responses (**20.2 minutes**) that dispatch an average of 2.4 units, representing multi-unit interventions.
+- **Cluster 0 (n = 182)** – protracted incidents lasting roughly **24 hours**; they feature longer alarm gaps and likely correspond to extended operations or problem data that merit manual review.
 
 These segments can guide staffing: most calls are fast and single-unit, while a small fraction requires full-shift commitments.
