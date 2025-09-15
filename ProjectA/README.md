@@ -79,5 +79,23 @@ Instructors can use this framework for examining machine learning algorithms to 
 
 ---
 
+**Deliverables (in repo):**
+- `slides/Slides.pdf` — teacher slides
+- `activity_guides/activity1.pdf` — Activity Guide: Zombie Prediction
+- `activity_guides/activity2.pdf` — Activity Guide: Numerical Accuracy
+- `assets/zombie_map.png` — survival map
+- `ProjectInfo.md` — project summary and links
+
+**Learning outcomes (students will be able to):**
+1. Use similarity (KNN) to make numerical predictions.
+2. Compute accuracy for numerical predictions with tolerance thresholds (exact / ±5 / ±20).
+3. Discuss ethical stakes of “good enough” accuracy.
+
+**How to run (no computers):**
+1. Print slides and both activity guides (1 per group).  
+2. Print the map (1–2 per class).  
+3. Model Location A (find top-3 similar rows → average).  
+4. Students complete B & C, then compute accuracy; discuss thresholds.
+
 ## License
 This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
