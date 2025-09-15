@@ -81,8 +81,8 @@ Instructors can use this framework for examining machine learning algorithms to 
 
 **Deliverables (in repo):**
 - `slides/Slides.pdf` — teacher slides
-- `activity_guides/activity1.pdf` — Activity Guide: Zombie Prediction
-- `activity_guides/activity2.pdf` — Activity Guide: Numerical Accuracy
+- `activities/activity1.pdf` — Activity Guide: Zombie Prediction
+- `activities/activity2.pdf` — Activity Guide: Numerical Accuracy
 - `assets/zombie_map.png` — survival map
 - `ProjectInfo.md` — project summary and links
 
