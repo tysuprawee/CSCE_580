@@ -1,0 +1,41 @@
+Suprawee Pongpeeradech
+
+Columbia, SC 29201 | ty.suprawee@gmail.com | LinkedIn.com/in/supraweeUSC
+EDUCATION
+University of South Carolina - Columbia, SC Jan 2023 - Current
+Bachelor of Science in Computer Engineering (Expected December 2025) GPA: 3.89
+• President’s Honor Lists, Dean's Honor Lists, Scholarships
+Kasetsart University - Bangkok, Thailand 2020 – 2022
+Bachelor of Science in Software & Knowledge Engineering
+WORK & LEADERSHIP EXPERIENCE
+Undergraduate Assistant | HTML, CSS, Javascript, Python August 2023 - Present
+• Conducts computer lab sessions and assists students with assignments in HTML and Python.
+• Provides debugging support and guidance on programming concepts.
+Organization of Thai Sport Week August 2020
+Managed venue setup, sports equipment, and scheduling for over 300 athletes.
+• Oversaw event logistics, ensuring smooth competition flow.
+• Hosted the event and provided real-time coordination for athletes and sports categories.
+PROJECTS
+Music Streaming Web Application Capstone | React, Spring Boot, SQL 2024 – 2025
+• Developed a full-stack music streaming platform with user authentication, playlist management, and
+real-time audio streaming.
+• Designed an intuitive UI for seamless navigation and personalized music recommendations.
+• Implemented backend services for secure data storage and efficient content delivery.
+Data Assistant Analysis Software | Python, Pandas, Tkinter, SQL 2022
+• Developed a Python-based GUI program to analyze customer behavior from over 10 million records.
+• Utilized data visualization tools to generate insights for improved business decision-making.
+Shooting Game Development | C#, Unity, Physics Engine 2022
+• Designed and developed a shooting game incorporating real-world physics for improved aiming
+mechanics.
+Smart Café Project | Python, SQL, Database Management 2019 – 2020
+• Developed an automated system to manage internet usage based on customers' Wi-Fi hours and
+purchase history.
+• Implemented database-driven analytics to optimize pricing strategies.
+CanSat Thailand Competition 2019 (Top 50 Finalizst) | MATLAB, Python, 3D Maker Software 2019
+• Designed and simulated a 3D bottle rocket model to analyze projectile motion.
+• Performed force calculations to optimize aerodynamic performance before launch
+SKILLS
+Languages: Proficient in Python, Java, C#/C++; Familiar with SQL
+Software: Excel, Microsoft Access, Git, Linux, VS Code, Jupyter Notebook
+Frameworks: ROS, MATLAB, Verilog, React
+Skills: Leadership, Teamwork, Problem-solving
