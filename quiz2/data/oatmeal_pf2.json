@@ -1,0 +1,190 @@
+{
+  "recipe_name": "easy-oatmeal-chocolate-chip-cookies",
+  "food_role": ["Dessert"],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Easy-Oatmeal-Chocolate-Chip-Cookies/",
+    "last_system_access": "2024-10-05 09:15:00"
+  },
+  "macronutrients": {},
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "quantity": {"measure": "1", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "gluten-free flour",
+      "quality_characteristic": "leveled",
+      "image": ""
+    },
+    {
+      "name": "baking powder",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": ""
+    },
+    {
+      "name": "baking soda",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": ""
+    },
+    {
+      "name": "salt",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "fine",
+      "image": ""
+    },
+    {
+      "name": "coconut oil",
+      "quantity": {"measure": "0.5", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "melted butter",
+      "quality_characteristic": "liquid",
+      "image": ""
+    },
+    {
+      "name": "light brown sugar",
+      "quantity": {"measure": "0.5", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "packed",
+      "image": ""
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": {"measure": "0.25", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": ""
+    },
+    {
+      "name": "large egg",
+      "quantity": {"measure": "1", "unit": ""},
+      "allergies": {"id": "0x3eb1", "category": ["eggs"], "ref": [], "details": ""},
+      "alternative": "flax egg",
+      "quality_characteristic": "room temperature",
+      "image": ""
+    },
+    {
+      "name": "vanilla extract",
+      "quantity": {"measure": "1", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": ""
+    },
+    {
+      "name": "old fashioned oats",
+      "quantity": {"measure": "0.67", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "quick oats",
+      "quality_characteristic": "",
+      "image": ""
+    },
+    {
+      "name": "dark chocolate chips",
+      "quantity": {"measure": "1", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "milk chocolate chips",
+      "quality_characteristic": "",
+      "image": ""
+    }
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "10 minutes",
+  "cook_time": "10 minutes",
+  "serves": "24 cookies",
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350°F.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Preheat oven",
+          "output_quality": ["Temperature reaches 350°F"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        }
+      ],
+      "output_condition": ["oven_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Combine flour, baking powder, baking soda, and salt.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Mix dry ingredients",
+          "output_quality": ["Dry mix is even"],
+          "background_knowledge": {"tool": ["bowl", "whisk"], "failure": []}
+        }
+      ],
+      "output_condition": ["dry_mix_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Beat coconut oil with sugars until smooth.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Cream sugars and oil",
+          "output_quality": ["Mixture is smooth"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["creamed_base"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Mix in egg and vanilla.",
+      "input_condition": ["creamed_base"],
+      "task": [
+        {
+          "action_name": "Add egg and vanilla",
+          "output_quality": ["Mixture is cohesive"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["wet_mix_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Stir in dry mix, then oats and chocolate chips.",
+      "input_condition": ["wet_mix_ready", "dry_mix_ready"],
+      "task": [
+        {
+          "action_name": "Combine batters",
+          "output_quality": ["Dough evenly mixed"],
+          "background_knowledge": {"tool": ["spatula"], "failure": []}
+        }
+      ],
+      "output_condition": ["cookie_dough"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Portion dough and bake 10 minutes.",
+      "input_condition": ["cookie_dough", "oven_ready"],
+      "task": [
+        {
+          "action_name": "Scoop dough",
+          "output_quality": ["Even mounds"],
+          "background_knowledge": {"tool": ["sheet pan"], "failure": []}
+        },
+        {
+          "action_name": "Bake cookies",
+          "output_quality": ["Edges golden"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        }
+      ],
+      "output_condition": ["cookies_baked"],
+      "modality": {"image": [], "video": ""}
+    }
+  ]
+}

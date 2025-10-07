@@ -1,0 +1,227 @@
+{
+  "recipe_name": "easy-oatmeal-chocolate-chip-cookies",
+  "food_role": ["Dessert"],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Easy-Oatmeal-Chocolate-Chip-Cookies/",
+    "last_system_access": "2024-10-05 09:00:00"
+  },
+  "macronutrients": {
+    "serving_size": "1 cookie",
+    "calories": "120",
+    "protein_g": "2",
+    "fat_g": "6",
+    "carbohydrates_g": "16"
+  },
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "quantity": {"measure": "1", "unit": "cup"},
+      "allergies": {"id": "", "category": ["gluten"], "ref": ["https://www.foodallergy.org/resources/wheat-allergy"], "details": "contains wheat"},
+      "alternative": "gluten-free flour blend",
+      "quality_characteristic": "sifted",
+      "image": "./images/easy-oatmeal-cookies/ingredients/flour.jpg"
+    },
+    {
+      "name": "baking powder",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": "./images/easy-oatmeal-cookies/ingredients/baking-powder.jpg"
+    },
+    {
+      "name": "baking soda",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": "./images/easy-oatmeal-cookies/ingredients/baking-soda.jpg"
+    },
+    {
+      "name": "salt",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "fine",
+      "image": "./images/easy-oatmeal-cookies/ingredients/salt.jpg"
+    },
+    {
+      "name": "coconut oil",
+      "quantity": {"measure": "0.5", "unit": "cup"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "unsalted butter",
+      "quality_characteristic": "melted",
+      "image": "./images/easy-oatmeal-cookies/ingredients/coconut-oil.jpg"
+    },
+    {
+      "name": "light brown sugar",
+      "quantity": {"measure": "0.5", "unit": "cup"},
+      "allergies": {"id": "", "category": ["sugar"], "ref": [], "details": ""},
+      "alternative": "dark brown sugar",
+      "quality_characteristic": "packed",
+      "image": "./images/easy-oatmeal-cookies/ingredients/brown-sugar.jpg"
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": {"measure": "0.25", "unit": "cup"},
+      "allergies": {"id": "", "category": ["sugar"], "ref": [], "details": ""},
+      "alternative": "coconut sugar",
+      "quality_characteristic": "",
+      "image": "./images/easy-oatmeal-cookies/ingredients/granulated-sugar.jpg"
+    },
+    {
+      "name": "large egg",
+      "quantity": {"measure": "1", "unit": ""},
+      "allergies": {"id": "0x3eb1", "category": ["eggs"], "ref": ["https://farrp.unl.edu/informalleggs"], "details": ""},
+      "alternative": "flax egg",
+      "quality_characteristic": "room temperature",
+      "image": "./images/easy-oatmeal-cookies/ingredients/egg.jpg"
+    },
+    {
+      "name": "vanilla extract",
+      "quantity": {"measure": "1", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "maple extract",
+      "quality_characteristic": "pure",
+      "image": "./images/easy-oatmeal-cookies/ingredients/vanilla.jpg"
+    },
+    {
+      "name": "old fashioned oats",
+      "quantity": {"measure": "0.67", "unit": "cup"},
+      "allergies": {"id": "", "category": ["gluten"], "ref": [], "details": "use certified gluten-free if needed"},
+      "alternative": "quick oats",
+      "quality_characteristic": "",
+      "image": "./images/easy-oatmeal-cookies/ingredients/oats.jpg"
+    },
+    {
+      "name": "dark chocolate chips",
+      "quantity": {"measure": "1", "unit": "cup"},
+      "allergies": {"id": "", "category": ["dairy"], "ref": [], "details": "contains milk"},
+      "alternative": "dairy-free chocolate chips",
+      "quality_characteristic": "",
+      "image": "./images/easy-oatmeal-cookies/ingredients/chocolate-chips.jpg"
+    }
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "15 minutes",
+  "cook_time": "10 minutes",
+  "serves": "24 cookies",
+  "instructions": [
+    {
+      "original_text": "Preheat the oven to 350°F and gather all ingredients.",
+      "input_condition": ["have_kitchen_ready"],
+      "task": [
+        {
+          "action_name": "Preheat oven to 350°F",
+          "output_quality": ["Oven reaches 350°F"],
+          "background_knowledge": {"tool": ["oven"], "failure": ["oven not heated"]}
+        },
+        {
+          "action_name": "Set ingredients on counter",
+          "output_quality": ["All listed ingredients measured"],
+          "background_knowledge": {"tool": ["measuring cups"], "failure": ["missing ingredient"]}
+        }
+      ],
+      "output_condition": ["oven_preheated", "ingredients_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Combine flour, baking powder, baking soda, and salt in a bowl.",
+      "input_condition": ["ingredients_ready"],
+      "task": [
+        {
+          "action_name": "Mix dry ingredients",
+          "output_quality": ["Dry mixture is uniform"],
+          "background_knowledge": {"tool": ["medium bowl", "whisk"], "failure": ["leaveners clumped"]}
+        }
+      ],
+      "output_condition": ["dry_mix_prepared"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Blend coconut oil with sugars until smooth.",
+      "input_condition": ["ingredients_ready"],
+      "task": [
+        {
+          "action_name": "Cream coconut oil and sugars",
+          "output_quality": ["Mixture looks glossy"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["sugar granules visible"]}
+        }
+      ],
+      "output_condition": ["wet_base_prepared"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Beat in egg and vanilla until combined.",
+      "input_condition": ["wet_base_prepared"],
+      "task": [
+        {
+          "action_name": "Incorporate egg and vanilla",
+          "output_quality": ["Mixture is smooth"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["egg not mixed"]}
+        }
+      ],
+      "output_condition": ["wet_mix_complete"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Add dry ingredients to wet mixture on low speed until just combined.",
+      "input_condition": ["wet_mix_complete", "dry_mix_prepared"],
+      "task": [
+        {
+          "action_name": "Fold dry mix into wet mix",
+          "output_quality": ["No dry streaks remain"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["overmixed dough"]}
+        }
+      ],
+      "output_condition": ["base_dough_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Stir in oats and chocolate chips with a spatula.",
+      "input_condition": ["base_dough_ready"],
+      "task": [
+        {
+          "action_name": "Fold oats and chips",
+          "output_quality": ["Mix-ins evenly distributed"],
+          "background_knowledge": {"tool": ["spatula"], "failure": ["chips clumped"]}
+        }
+      ],
+      "output_condition": ["cookie_dough_complete"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Portion dough into 2 tablespoon balls onto lined baking sheet.",
+      "input_condition": ["cookie_dough_complete"],
+      "task": [
+        {
+          "action_name": "Scoop dough onto sheet",
+          "output_quality": ["12 evenly spaced portions"],
+          "background_knowledge": {"tool": ["parchment-lined sheet", "scoop"], "failure": ["portions uneven"]}
+        }
+      ],
+      "output_condition": ["tray_prepared"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Bake cookies for 10 minutes until golden, then cool.",
+      "input_condition": ["tray_prepared", "oven_preheated"],
+      "task": [
+        {
+          "action_name": "Bake cookie tray",
+          "output_quality": ["Edges lightly browned"],
+          "background_knowledge": {"tool": ["oven mitts"], "failure": ["cookies underbaked"]}
+        },
+        {
+          "action_name": "Cool cookies on rack",
+          "output_quality": ["Cookies firm before storage"],
+          "background_knowledge": {"tool": ["cooling rack"], "failure": ["cookies crumbled"]}
+        }
+      ],
+      "output_condition": ["cookies_ready"],
+      "modality": {"image": [], "video": ""}
+    }
+  ]
+}

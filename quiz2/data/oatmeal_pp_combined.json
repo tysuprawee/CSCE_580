@@ -1,0 +1,290 @@
+{
+  "recipe_name": "easy-oatmeal-chocolate-chip-cookies",
+  "food_role": [
+    "Dessert"
+  ],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Easy-Oatmeal-Chocolate-Chip-Cookies/",
+    "last_system_access": "2024-10-05 10:00:00"
+  },
+  "macronutrients": {
+    "serving_size": "1 cookie",
+    "calories": "120",
+    "protein_g": "2",
+    "fat_g": "6",
+    "carbohydrates_g": "16"
+  },
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "quantity": {
+        "measure": "1",
+        "unit": "cup"
+      }
+    },
+    {
+      "name": "baking powder",
+      "quantity": {
+        "measure": "0.5",
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "name": "baking soda",
+      "quantity": {
+        "measure": "0.5",
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "name": "salt",
+      "quantity": {
+        "measure": "0.5",
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "name": "coconut oil",
+      "quantity": {
+        "measure": "0.5",
+        "unit": "cup"
+      }
+    },
+    {
+      "name": "light brown sugar",
+      "quantity": {
+        "measure": "0.5",
+        "unit": "cup"
+      }
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": {
+        "measure": "0.25",
+        "unit": "cup"
+      }
+    },
+    {
+      "name": "large egg",
+      "quantity": {
+        "measure": "1",
+        "unit": ""
+      }
+    },
+    {
+      "name": "vanilla extract",
+      "quantity": {
+        "measure": "1",
+        "unit": "teaspoon"
+      }
+    },
+    {
+      "name": "old fashioned oats",
+      "quantity": {
+        "measure": "0.67",
+        "unit": "cup"
+      }
+    },
+    {
+      "name": "dark chocolate chips",
+      "quantity": {
+        "measure": "1",
+        "unit": "cup"
+      }
+    }
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "15 minutes",
+  "cook_time": "10 minutes",
+  "serves": "24 cookies",
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350\u00b0F and line baking sheet.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Preheat oven",
+          "output_quality": [
+            "Oven reaches 350\u00b0F"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "oven"
+            ],
+            "failure": []
+          }
+        },
+        {
+          "action_name": "Line baking sheet",
+          "output_quality": [
+            "Sheet is covered with parchment"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "parchment paper"
+            ],
+            "failure": []
+          }
+        }
+      ],
+      "output_condition": [
+        "oven_ready",
+        "sheet_prepared"
+      ],
+      "modality": {
+        "image": [],
+        "video": ""
+      }
+    },
+    {
+      "original_text": "Mix dry ingredients together.",
+      "input_condition": [
+        "ingredients_measured"
+      ],
+      "task": [
+        {
+          "action_name": "Combine dry ingredients",
+          "output_quality": [
+            "Powders evenly blended"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "bowl",
+              "whisk"
+            ],
+            "failure": []
+          }
+        }
+      ],
+      "output_condition": [
+        "dry_mix_ready"
+      ],
+      "modality": {
+        "image": [],
+        "video": ""
+      }
+    },
+    {
+      "original_text": "Cream coconut oil with sugars, then add egg and vanilla.",
+      "input_condition": [
+        "ingredients_measured"
+      ],
+      "task": [
+        {
+          "action_name": "Cream coconut oil and sugars",
+          "output_quality": [
+            "Mixture smooth"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "mixer"
+            ],
+            "failure": []
+          }
+        },
+        {
+          "action_name": "Blend in egg and vanilla",
+          "output_quality": [
+            "Wet mixture uniform"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "mixer"
+            ],
+            "failure": []
+          }
+        }
+      ],
+      "output_condition": [
+        "wet_mix_ready"
+      ],
+      "modality": {
+        "image": [],
+        "video": ""
+      }
+    },
+    {
+      "original_text": "Combine wet and dry mixtures, then stir in oats and chocolate chips.",
+      "input_condition": [
+        "wet_mix_ready",
+        "dry_mix_ready"
+      ],
+      "task": [
+        {
+          "action_name": "Fold dry mix into wet mix",
+          "output_quality": [
+            "No dry spots"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "spatula"
+            ],
+            "failure": []
+          }
+        },
+        {
+          "action_name": "Stir in oats and chocolate chips",
+          "output_quality": [
+            "Mix-ins evenly distributed"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "spatula"
+            ],
+            "failure": []
+          }
+        }
+      ],
+      "output_condition": [
+        "cookie_dough_ready"
+      ],
+      "modality": {
+        "image": [],
+        "video": ""
+      }
+    },
+    {
+      "original_text": "Scoop dough and bake for 10 minutes.",
+      "input_condition": [
+        "cookie_dough_ready",
+        "oven_ready",
+        "sheet_prepared"
+      ],
+      "task": [
+        {
+          "action_name": "Portion dough",
+          "output_quality": [
+            "Balls of 2 tablespoons"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "scoop"
+            ],
+            "failure": []
+          }
+        },
+        {
+          "action_name": "Bake cookies",
+          "output_quality": [
+            "Edges golden"
+          ],
+          "background_knowledge": {
+            "tool": [
+              "oven"
+            ],
+            "failure": []
+          }
+        }
+      ],
+      "output_condition": [
+        "cookies_baked"
+      ],
+      "modality": {
+        "image": [],
+        "video": ""
+      }
+    }
+  ]
+}

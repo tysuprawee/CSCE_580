@@ -1,0 +1,26 @@
+{
+  "recipe_name": "easy-oatmeal-chocolate-chip-cookies",
+  "food_role": ["Dessert"],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Easy-Oatmeal-Chocolate-Chip-Cookies/",
+    "last_system_access": "2024-10-05 09:30:00"
+  },
+  "macronutrients": {},
+  "ingredients": [
+    {
+      "name": "cookie dough base",
+      "quantity": {"measure": "1", "unit": "batch"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "prepared",
+      "image": ""
+    }
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "",
+  "cook_time": "",
+  "serves": "",
+  "instructions": []
+}

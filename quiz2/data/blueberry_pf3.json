@@ -1,0 +1,25 @@
+{
+  "recipe_name": "ricotta-blueberry-cake-with-streusel-crumble",
+  "food_role": [],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Ricotta-Blueberry-Cake-With-Streusel-Crumble/",
+    "last_system_access": "2024-10-05 10:05:00"
+  },
+  "macronutrients": {},
+  "ingredients": [],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "",
+  "cook_time": "",
+  "serves": "",
+  "instructions": [
+    {
+      "original_text": "Bake the cake until golden.",
+      "input_condition": [],
+      "task": [],
+      "output_condition": [],
+      "modality": {"image": [], "video": ""}
+    }
+  ]
+}

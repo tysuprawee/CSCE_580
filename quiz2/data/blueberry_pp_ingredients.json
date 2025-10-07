@@ -1,0 +1,22 @@
+{
+  "recipe_name": "ricotta-blueberry-cake-with-streusel-crumble",
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Ricotta-Blueberry-Cake-With-Streusel-Crumble/"
+  },
+  "ingredients": [
+    {"name": "cold butter", "quantity": {"measure": "125", "unit": "g"}},
+    {"name": "caster sugar", "quantity": {"measure": "110", "unit": "g"}},
+    {"name": "all-purpose flour", "quantity": {"measure": "375", "unit": "g"}},
+    {"name": "softened butter", "quantity": {"measure": "110", "unit": "g"}},
+    {"name": "caster sugar (batter)", "quantity": {"measure": "110", "unit": "g"}},
+    {"name": "eggs", "quantity": {"measure": "2", "unit": ""}},
+    {"name": "vanilla extract", "quantity": {"measure": "1", "unit": "teaspoon"}},
+    {"name": "ricotta", "quantity": {"measure": "150", "unit": "g"}},
+    {"name": "baking powder", "quantity": {"measure": "2", "unit": "teaspoon"}},
+    {"name": "baking soda", "quantity": {"measure": "0.5", "unit": "teaspoon"}},
+    {"name": "lemon zest", "quantity": {"measure": "1", "unit": "lemon"}},
+    {"name": "salt", "quantity": {"measure": "1", "unit": "teaspoon"}},
+    {"name": "blueberries", "quantity": {"measure": "500", "unit": "g"}},
+    {"name": "powdered sugar", "quantity": {"measure": "", "unit": "for dusting"}}
+  ]
+}

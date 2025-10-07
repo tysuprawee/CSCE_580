@@ -1,0 +1,100 @@
+{
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350°F and prepare pan.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Preheat oven",
+          "output_quality": ["Oven shows 350°F"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        },
+        {
+          "action_name": "Line and grease pan",
+          "output_quality": ["Parchment in base, sides greased"],
+          "background_knowledge": {"tool": ["parchment", "butter"], "failure": []}
+        }
+      ],
+      "output_condition": ["oven_ready", "pan_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Prepare streusel crumbs and chill.",
+      "input_condition": ["pan_ready"],
+      "task": [
+        {
+          "action_name": "Combine streusel ingredients",
+          "output_quality": ["Coarse crumbs formed"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["streusel_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Cream butter and sugar, then add eggs, vanilla, and ricotta.",
+      "input_condition": ["pan_ready"],
+      "task": [
+        {
+          "action_name": "Cream butter and sugar",
+          "output_quality": ["Light and fluffy"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        },
+        {
+          "action_name": "Blend in eggs, vanilla, ricotta",
+          "output_quality": ["Smooth batter"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["wet_mix_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Whisk dry ingredients together and fold into wet mix.",
+      "input_condition": ["wet_mix_ready"],
+      "task": [
+        {
+          "action_name": "Whisk dry ingredients",
+          "output_quality": ["Even distribution"],
+          "background_knowledge": {"tool": ["bowl", "whisk"], "failure": []}
+        },
+        {
+          "action_name": "Fold dry mix into batter",
+          "output_quality": ["Batter smooth"],
+          "background_knowledge": {"tool": ["spatula"], "failure": []}
+        }
+      ],
+      "output_condition": ["cake_batter_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Top batter with blueberries and streusel, then bake until tester is clean and cool before serving.",
+      "input_condition": ["cake_batter_ready", "streusel_ready", "oven_ready"],
+      "task": [
+        {
+          "action_name": "Arrange blueberries and streusel",
+          "output_quality": ["Even coverage"],
+          "background_knowledge": {"tool": ["spatula"], "failure": []}
+        },
+        {
+          "action_name": "Bake cake",
+          "output_quality": ["Tester clean after 60-70 minutes"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        },
+        {
+          "action_name": "Cool and dust",
+          "output_quality": ["Cake cool before dusting"],
+          "background_knowledge": {"tool": ["cooling rack", "sieve"], "failure": []}
+        }
+      ],
+      "output_condition": ["cake_finished"],
+      "modality": {"image": [], "video": ""}
+    }
+  ],
+  "prep_time": "25 minutes",
+  "cook_time": "65 minutes",
+  "serves": "10 slices",
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false
+}

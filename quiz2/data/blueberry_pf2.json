@@ -1,0 +1,117 @@
+{
+  "recipe_name": "ricotta-blueberry-cake-with-streusel-crumble",
+  "food_role": ["Dessert"],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Ricotta-Blueberry-Cake-With-Streusel-Crumble/",
+    "last_system_access": "2024-10-05 09:55:00"
+  },
+  "macronutrients": {},
+  "ingredients": [
+    {"name": "cold butter", "quantity": {"measure": "125", "unit": "g"}},
+    {"name": "caster sugar", "quantity": {"measure": "220", "unit": "g"}},
+    {"name": "all-purpose flour", "quantity": {"measure": "375", "unit": "g"}},
+    {"name": "softened butter", "quantity": {"measure": "110", "unit": "g"}},
+    {"name": "eggs", "quantity": {"measure": "2", "unit": ""}},
+    {"name": "vanilla extract", "quantity": {"measure": "1", "unit": "teaspoon"}},
+    {"name": "ricotta", "quantity": {"measure": "150", "unit": "g"}},
+    {"name": "baking powder", "quantity": {"measure": "2", "unit": "teaspoon"}},
+    {"name": "baking soda", "quantity": {"measure": "0.5", "unit": "teaspoon"}},
+    {"name": "lemon zest", "quantity": {"measure": "1", "unit": "lemon"}},
+    {"name": "salt", "quantity": {"measure": "1", "unit": "teaspoon"}},
+    {"name": "blueberries", "quantity": {"measure": "500", "unit": "g"}},
+    {"name": "powdered sugar", "quantity": {"measure": "", "unit": "for dusting"}}
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "20 minutes",
+  "cook_time": "65 minutes",
+  "serves": "10",
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350°F and prepare springform pan.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Preheat oven",
+          "output_quality": ["Oven set to 350°F"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        },
+        {
+          "action_name": "Prep pan",
+          "output_quality": ["Pan lined and greased"],
+          "background_knowledge": {"tool": ["parchment"], "failure": []}
+        }
+      ],
+      "output_condition": ["oven_ready", "pan_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Mix streusel ingredients into crumbs and chill.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Make streusel",
+          "output_quality": ["Coarse crumbs"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["streusel_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Cream butter and sugar, then add eggs, vanilla, and ricotta.",
+      "input_condition": [],
+      "task": [
+        {
+          "action_name": "Cream butter and sugar",
+          "output_quality": ["Light texture"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        },
+        {
+          "action_name": "Add eggs, vanilla, ricotta",
+          "output_quality": ["Smooth batter"],
+          "background_knowledge": {"tool": ["mixer"], "failure": []}
+        }
+      ],
+      "output_condition": ["wet_mix"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Whisk dry ingredients and fold into wet mix.",
+      "input_condition": ["wet_mix"],
+      "task": [
+        {
+          "action_name": "Combine dry ingredients",
+          "output_quality": ["Even dry mix"],
+          "background_knowledge": {"tool": ["bowl"], "failure": []}
+        },
+        {
+          "action_name": "Fold into wet mix",
+          "output_quality": ["Thick batter"],
+          "background_knowledge": {"tool": ["spatula"], "failure": []}
+        }
+      ],
+      "output_condition": ["batter_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Add blueberries, top with streusel, and bake until done.",
+      "input_condition": ["batter_ready", "streusel_ready", "oven_ready"],
+      "task": [
+        {
+          "action_name": "Assemble cake",
+          "output_quality": ["Berries evenly distributed"],
+          "background_knowledge": {"tool": ["spatula"], "failure": []}
+        },
+        {
+          "action_name": "Bake cake",
+          "output_quality": ["Tester clean"],
+          "background_knowledge": {"tool": ["oven"], "failure": []}
+        }
+      ],
+      "output_condition": ["cake_baked"],
+      "modality": {"image": [], "video": ""}
+    }
+  ]
+}

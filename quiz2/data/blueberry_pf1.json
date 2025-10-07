@@ -1,0 +1,250 @@
+{
+  "recipe_name": "ricotta-blueberry-cake-with-streusel-crumble",
+  "food_role": ["Dessert"],
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Ricotta-Blueberry-Cake-With-Streusel-Crumble/",
+    "last_system_access": "2024-10-05 09:45:00"
+  },
+  "macronutrients": {
+    "serving_size": "1 slice",
+    "calories": "320",
+    "protein_g": "6",
+    "fat_g": "15",
+    "carbohydrates_g": "42"
+  },
+  "ingredients": [
+    {
+      "name": "cold butter",
+      "quantity": {"measure": "125", "unit": "g"},
+      "allergies": {"id": "", "category": ["dairy"], "ref": [], "details": ""},
+      "alternative": "vegan butter",
+      "quality_characteristic": "cubed",
+      "image": "./images/ricotta-blueberry-cake/ingredients/cold-butter.jpg"
+    },
+    {
+      "name": "caster sugar",
+      "quantity": {"measure": "220", "unit": "g"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "granulated sugar",
+      "quality_characteristic": "divided",
+      "image": "./images/ricotta-blueberry-cake/ingredients/caster-sugar.jpg"
+    },
+    {
+      "name": "all-purpose flour",
+      "quantity": {"measure": "375", "unit": "g"},
+      "allergies": {"id": "", "category": ["gluten"], "ref": [], "details": "contains wheat"},
+      "alternative": "gluten-free flour",
+      "quality_characteristic": "divided",
+      "image": "./images/ricotta-blueberry-cake/ingredients/flour.jpg"
+    },
+    {
+      "name": "softened butter",
+      "quantity": {"measure": "110", "unit": "g"},
+      "allergies": {"id": "", "category": ["dairy"], "ref": [], "details": ""},
+      "alternative": "vegan butter",
+      "quality_characteristic": "room temperature",
+      "image": "./images/ricotta-blueberry-cake/ingredients/soft-butter.jpg"
+    },
+    {
+      "name": "eggs",
+      "quantity": {"measure": "2", "unit": ""},
+      "allergies": {"id": "0x3eb1", "category": ["eggs"], "ref": [], "details": ""},
+      "alternative": "chia eggs",
+      "quality_characteristic": "lightly beaten",
+      "image": "./images/ricotta-blueberry-cake/ingredients/eggs.jpg"
+    },
+    {
+      "name": "vanilla extract",
+      "quantity": {"measure": "1", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "vanilla bean paste",
+      "quality_characteristic": "",
+      "image": "./images/ricotta-blueberry-cake/ingredients/vanilla.jpg"
+    },
+    {
+      "name": "ricotta",
+      "quantity": {"measure": "150", "unit": "g"},
+      "allergies": {"id": "", "category": ["dairy"], "ref": [], "details": ""},
+      "alternative": "whole-milk ricotta",
+      "quality_characteristic": "drained",
+      "image": "./images/ricotta-blueberry-cake/ingredients/ricotta.jpg"
+    },
+    {
+      "name": "baking powder",
+      "quantity": {"measure": "2", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": "./images/ricotta-blueberry-cake/ingredients/baking-powder.jpg"
+    },
+    {
+      "name": "baking soda",
+      "quantity": {"measure": "0.5", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": "./images/ricotta-blueberry-cake/ingredients/baking-soda.jpg"
+    },
+    {
+      "name": "lemon zest",
+      "quantity": {"measure": "1", "unit": "lemon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "orange zest",
+      "quality_characteristic": "freshly grated",
+      "image": "./images/ricotta-blueberry-cake/ingredients/lemon-zest.jpg"
+    },
+    {
+      "name": "salt",
+      "quantity": {"measure": "1", "unit": "teaspoon"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "",
+      "quality_characteristic": "fine",
+      "image": "./images/ricotta-blueberry-cake/ingredients/salt.jpg"
+    },
+    {
+      "name": "blueberries",
+      "quantity": {"measure": "500", "unit": "g"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": ""},
+      "alternative": "mixed berries",
+      "quality_characteristic": "washed and dried",
+      "image": "./images/ricotta-blueberry-cake/ingredients/blueberries.jpg"
+    },
+    {
+      "name": "powdered sugar",
+      "quantity": {"measure": "", "unit": "for dusting"},
+      "allergies": {"id": "", "category": [], "ref": [], "details": "optional"},
+      "alternative": "",
+      "quality_characteristic": "",
+      "image": "./images/ricotta-blueberry-cake/ingredients/powdered-sugar.jpg"
+    }
+  ],
+  "hasDairy": true,
+  "hasMeat": false,
+  "hasNuts": false,
+  "prep_time": "25 minutes",
+  "cook_time": "65 minutes",
+  "serves": "10 slices",
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350°F and prepare a greased, parchment-lined springform pan.",
+      "input_condition": ["have_pan"],
+      "task": [
+        {
+          "action_name": "Preheat oven to 350°F",
+          "output_quality": ["Oven displays 350°F"],
+          "background_knowledge": {"tool": ["oven"], "failure": ["oven cold"]}
+        },
+        {
+          "action_name": "Line and grease pan",
+          "output_quality": ["Parchment covers base and sides greased"],
+          "background_knowledge": {"tool": ["parchment", "butter"], "failure": ["pan sticks"]}
+        }
+      ],
+      "output_condition": ["pan_ready", "oven_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Rinse blueberries, dry them, and set aside.",
+      "input_condition": ["blueberries_available"],
+      "task": [
+        {
+          "action_name": "Wash blueberries",
+          "output_quality": ["Blueberries clean"],
+          "background_knowledge": {"tool": ["sieve"], "failure": ["berries crushed"]}
+        },
+        {
+          "action_name": "Dry berries",
+          "output_quality": ["Berries surface dry"],
+          "background_knowledge": {"tool": ["kitchen towel"], "failure": ["batter watery"]}
+        }
+      ],
+      "output_condition": ["berries_prepared"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Make streusel by pulsing cold butter, part of sugar, and part of flour until crumbles form.",
+      "input_condition": ["pan_ready"],
+      "task": [
+        {
+          "action_name": "Combine streusel ingredients",
+          "output_quality": ["Coarse crumbs formed"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["butter melted"]}
+        }
+      ],
+      "output_condition": ["streusel_chilled"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Cream softened butter with sugar, then incorporate eggs, vanilla, and ricotta.",
+      "input_condition": ["pan_ready"],
+      "task": [
+        {
+          "action_name": "Cream butter and sugar",
+          "output_quality": ["Mixture pale and fluffy"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["sugar not dissolved"]}
+        },
+        {
+          "action_name": "Blend in eggs, vanilla, ricotta",
+          "output_quality": ["Batter smooth"],
+          "background_knowledge": {"tool": ["stand mixer"], "failure": ["batter curdled"]}
+        }
+      ],
+      "output_condition": ["wet_mix_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Whisk remaining flour, baking powder, baking soda, lemon zest, and salt; fold into wet mixture.",
+      "input_condition": ["wet_mix_ready"],
+      "task": [
+        {
+          "action_name": "Combine dry batter ingredients",
+          "output_quality": ["Dry mix uniform"],
+          "background_knowledge": {"tool": ["bowl", "whisk"], "failure": ["clumps remain"]}
+        },
+        {
+          "action_name": "Fold dry mix into wet",
+          "output_quality": ["Batter thick and smooth"],
+          "background_knowledge": {"tool": ["spatula"], "failure": ["overmixed batter"]}
+        }
+      ],
+      "output_condition": ["cake_batter_ready"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Spread batter in pan, top with blueberries and chilled streusel.",
+      "input_condition": ["cake_batter_ready", "berries_prepared", "streusel_chilled"],
+      "task": [
+        {
+          "action_name": "Spread batter in pan",
+          "output_quality": ["Surface levelled"],
+          "background_knowledge": {"tool": ["spatula"], "failure": ["uneven cake"]}
+        },
+        {
+          "action_name": "Arrange blueberries and streusel",
+          "output_quality": ["Fruit evenly distributed"],
+          "background_knowledge": {"tool": ["hands"], "failure": ["streusel clumped"]}
+        }
+      ],
+      "output_condition": ["cake_ready_to_bake"],
+      "modality": {"image": [], "video": ""}
+    },
+    {
+      "original_text": "Bake 60-70 minutes until a skewer comes out clean, then cool and dust with sugar.",
+      "input_condition": ["cake_ready_to_bake", "oven_ready"],
+      "task": [
+        {
+          "action_name": "Bake cake",
+          "output_quality": ["Skewer clean"],
+          "background_knowledge": {"tool": ["oven"], "failure": ["underbaked center"]}
+        },
+        {
+          "action_name": "Cool and dust cake",
+          "output_quality": ["Cake cool before serving"],
+          "background_knowledge": {"tool": ["cooling rack", "sieve"], "failure": ["cake collapsed"]}
+        }
+      ],
+      "output_condition": ["cake_served"],
+      "modality": {"image": [], "video": ""}
+    }
+  ]
+}
