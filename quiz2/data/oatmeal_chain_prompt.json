@@ -1,0 +1,66 @@
+{
+  "recipe_name": "easy-oatmeal-chocolate-chip-cookies",
+  "data_provenance": {
+    "source_url": "https://www.instructables.com/Easy-Oatmeal-Chocolate-Chip-Cookies/",
+    "prompt_strategy": "chain-of-thought then structure",
+    "llm": "ChatGPT-4o-mini",
+    "run_timestamp": "2024-10-05T15:15:00"
+  },
+  "macronutrients": {
+    "serving_size": "1 cookie",
+    "calories": "118",
+    "protein_g": "2",
+    "fat_g": "6",
+    "carbohydrates_g": "16"
+  },
+  "ingredients": [
+    {"name": "unsalted butter", "quantity": {"measure": "0.5", "unit": "cup"}},
+    {"name": "light brown sugar", "quantity": {"measure": "0.5", "unit": "cup"}},
+    {"name": "granulated sugar", "quantity": {"measure": "0.25", "unit": "cup"}},
+    {"name": "large egg", "quantity": {"measure": "1", "unit": ""}},
+    {"name": "vanilla extract", "quantity": {"measure": "1", "unit": "teaspoon"}},
+    {"name": "all-purpose flour", "quantity": {"measure": "1", "unit": "cup"}},
+    {"name": "baking powder", "quantity": {"measure": "0.5", "unit": "teaspoon"}},
+    {"name": "baking soda", "quantity": {"measure": "0.25", "unit": "teaspoon"}},
+    {"name": "kosher salt", "quantity": {"measure": "0.25", "unit": "teaspoon"}},
+    {"name": "old fashioned oats", "quantity": {"measure": "0.75", "unit": "cup"}},
+    {"name": "dark chocolate chips", "quantity": {"measure": "1", "unit": "cup"}}
+  ],
+  "instructions": [
+    {
+      "original_text": "Preheat oven to 350°F and line two baking sheets with parchment paper.",
+      "task": [
+        {"action_name": "Set oven to 350°F", "background_knowledge": {"tool": ["oven"], "failure": ["temperature incorrect"]}},
+        {"action_name": "Line baking sheets", "background_knowledge": {"tool": ["parchment paper"], "failure": ["cookies stick"]}}
+      ]
+    },
+    {
+      "original_text": "Cream butter with both sugars until fluffy, then beat in egg and vanilla.",
+      "task": [
+        {"action_name": "Cream butter and sugars", "background_knowledge": {"tool": ["stand mixer"], "failure": ["butter too cold"]}},
+        {"action_name": "Mix in egg and vanilla", "background_knowledge": {"tool": ["stand mixer"], "failure": ["egg not incorporated"]}}
+      ]
+    },
+    {
+      "original_text": "Whisk flour, leaveners, and salt together, then fold into wet mixture.",
+      "task": [
+        {"action_name": "Whisk dry ingredients", "background_knowledge": {"tool": ["bowl", "whisk"], "failure": ["lumps remain"]}},
+        {"action_name": "Fold dry mix into wet mix", "background_knowledge": {"tool": ["spatula"], "failure": ["overmixed dough"]}}
+      ]
+    },
+    {
+      "original_text": "Stir oats and chocolate chips into dough.",
+      "task": [
+        {"action_name": "Fold oats", "background_knowledge": {"tool": ["spatula"], "failure": ["oats clumped"]}},
+        {"action_name": "Add chocolate chips", "background_knowledge": {"tool": ["spatula"], "failure": ["chips sink"]}}
+      ]
+    },
+    {
+      "original_text": "Scoop 2-tablespoon portions, bake 10 minutes, and cool on racks.",
+      "task": [
+        {"action_name": "Portion dough", "background_knowledge": {"tool": ["cookie scoop"], "failure": ["uneven portions"]}},
+        {"action_name": "Bake and cool cookies", "background_knowledge": {"tool": ["oven", "cooling rack"], "failure": ["overbaked cookies"]}}
+      ]
+    }
+  ]
+}
