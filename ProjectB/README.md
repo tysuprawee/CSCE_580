@@ -2,6 +2,8 @@
 
 This project now ships with reproducible code for the full workflow described in the CSCE 580 (Fall 2025) assignment brief. The implementation lives in `ProjectB/src/projectb` and the runnable entrypoints are under `ProjectB/scripts`. You will compare transformer-based and classical sentiment analysis pipelines on the [IMDB Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/).
 
+> **Need a walkthrough?** Follow the [step-by-step execution guide](STEP_BY_STEP.md) for exact commands that regenerate every artifact prior to submission.
+
 > **Tip:** All training scripts default to small subsets (2k/1k examples) so they can be executed on the course VM. Increase the limits via command-line flags once you are ready for the full 25k/25k splits.
 
 ## 1. Dataset Overview
@@ -73,8 +75,36 @@ Prepare written responses for the five reflection prompts in the brief, covering
    ```bash
    python scripts/train_manual.py --epochs 3 --limit-train 4000 --limit-test 2000 --batch-size 12
    ```
-6. **Evaluation & Visualization** – the scripts emit JSON summaries (see `ProjectB/artifacts/`). Load them into notebooks to plot curves, confusion matrices, and tables.
-7. **Reporting** – compile figures, tables, and written analysis into the final report. Include comparisons between classical baselines and both DistilBERT fine-tuning strategies.
+6. **Baseline Transformers (No Fine-Tuning + GPT)** – run the additional baselines to benchmark the assignment’s “why/when to use LLMs” comparison points:
+   ```bash
+   python scripts/evaluate_baselines.py --limit-train 4000 --limit-test 2000
+   ```
+   The script emits `artifacts/base_metrics.json` for the untouched DistilBERT classifier and `artifacts/gpt_metrics.json` for the GPT-2 likelihood classifier.
+7. **Evaluation & Visualization** – the scripts emit JSON summaries (see `ProjectB/artifacts/`). Load them into notebooks to plot curves, confusion matrices, and tables. You can regenerate the SVG plots with:
+   ```bash
+   python scripts/create_svg_plots.py --trainer artifacts/trainer_metrics.json \
+       --manual artifacts/manual_metrics.json --classical artifacts/classical_metrics.json \
+       --base artifacts/base_metrics.json --gpt artifacts/gpt_metrics.json
+   ```
+8. **Reporting** – compile figures, tables, and written analysis into the final report. Include comparisons between classical baselines, the base DistilBERT model, GPT classifier, and both DistilBERT fine-tuning strategies.
+
+### End-to-End Rerun Helper
+
+When you are ready for the final submission pass, you can regenerate *all* artifacts in one go with the orchestration script:
+
+```bash
+python scripts/run_pipeline.py \
+    --epochs 3 \
+    --batch-size 16 \
+    --train-limit 25000 \
+    --test-limit 25000
+```
+
+- Drop the `--train-limit/--test-limit` flags to consume the entire IMDB splits.
+- Pass `--skip-baselines` if you only need the fine-tuning refresh, or `--skip-plots` to postpone SVG regeneration.
+- Use `--plots-dir` to redirect the output location (defaults to `artifacts/plots`).
+
+The helper sequentially invokes `train_classical.py`, `train_with_trainer.py`, `train_manual.py`, `evaluate_baselines.py`, and finally `create_svg_plots.py` once their JSON outputs exist, ensuring the report-ready assets stay in sync.
 
 ## 9. References
 - Hugging Face DistilBERT fine-tuning tutorial (PyTorch Trainer): <https://huggingface.co/blog/sentiment-analysis-python>
@@ -95,11 +125,13 @@ ProjectB/
 ├── README.md                # Assignment brief + workflow
 ├── requirements.txt         # Minimal dependency set
 ├── scripts/
+│   ├── evaluate_baselines.py# Base DistilBERT and GPT-2 evaluations
 │   ├── train_classical.py   # TF–IDF + LR / Naive Bayes baselines
 │   ├── train_manual.py      # Custom PyTorch fine-tuning loop
 │   └── train_with_trainer.py# Hugging Face Trainer wrapper
 ├── src/projectb/
 │   ├── __init__.py
+│   ├── baselines.py         # Base transformer & GPT evaluations
 │   ├── classical.py         # Classical ML utilities
 │   ├── cleaning.py          # Text normalisation helpers
 │   ├── data.py              # Dataset download/splitting/tokenisation

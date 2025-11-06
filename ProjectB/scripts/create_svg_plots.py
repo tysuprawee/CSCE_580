@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List, Optional, Tuple
 
 SVG_HEADER = "http://www.w3.org/2000/svg"
 
@@ -128,6 +128,8 @@ def main() -> None:
     parser.add_argument("--trainer", type=Path, required=True)
     parser.add_argument("--manual", type=Path, required=True)
     parser.add_argument("--classical", type=Path, required=True)
+    parser.add_argument("--base", type=Path, default=None)
+    parser.add_argument("--gpt", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=Path("artifacts/plots"))
     args = parser.parse_args()
 
@@ -136,6 +138,8 @@ def main() -> None:
     trainer = _load(args.trainer)
     manual = _load(args.manual)
     classical = _load(args.classical)
+    base: Optional[Dict] = _load(args.base) if args.base else None
+    gpt: Optional[Dict] = _load(args.gpt) if args.gpt else None
 
     trainer_epochs = [entry["epoch"] for entry in trainer.get("history", {}).get("epochs", [])]
     manual_epochs = [entry["epoch"] for entry in manual.get("history", {}).get("epochs", [])]
@@ -190,6 +194,16 @@ def main() -> None:
     classical_cm = classical.get("logistic_regression", {}).get("test", {}).get("report", {}).get("confusion_matrix")
     if classical_cm:
         _create_confusion_svg(classical_cm, "Logistic Regression Confusion Matrix", args.output_dir / "classical_confusion.svg")
+
+    if base:
+        base_cm = base.get("test", {}).get("report", {}).get("confusion_matrix")
+        if base_cm:
+            _create_confusion_svg(base_cm, "Base DistilBERT Confusion Matrix", args.output_dir / "base_confusion.svg")
+
+    if gpt:
+        gpt_cm = gpt.get("test", {}).get("report", {}).get("confusion_matrix")
+        if gpt_cm:
+            _create_confusion_svg(gpt_cm, "GPT Classifier Confusion Matrix", args.output_dir / "gpt_confusion.svg")
 
 
 if __name__ == "__main__":  # pragma: no cover

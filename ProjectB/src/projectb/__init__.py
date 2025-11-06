@@ -11,6 +11,7 @@ from .data import (
     tokenize_testcases,
 )
 from .metrics import ClassificationReport, compute_classification_report
+from .baselines import BaselineConfig, evaluate_base_distilbert, evaluate_gpt_classifier
 
 __all__ = [
     "clean_review",
@@ -24,4 +25,7 @@ __all__ = [
     "tokenize_testcases",
     "ClassificationReport",
     "compute_classification_report",
+    "BaselineConfig",
+    "evaluate_base_distilbert",
+    "evaluate_gpt_classifier",
 ]
