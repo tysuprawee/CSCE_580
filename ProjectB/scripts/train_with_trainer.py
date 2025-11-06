@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""CLI for running the 🤗 Trainer workflow on a manageable IMDB subset."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SRC_DIR = PROJECT_ROOT / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from projectb.trainer_workflow import TrainerConfig, run_trainer_pipeline
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=Path("artifacts/trainer_metrics.json"), help="Where to write evaluation metrics.")
+    parser.add_argument("--limit-train", type=int, default=2000, help="Limit the number of training examples (for faster experimentation).")
+    parser.add_argument("--limit-test", type=int, default=1000, help="Limit the number of test examples.")
+    parser.add_argument("--epochs", type=int, default=2)
+    parser.add_argument("--batch-size", type=int, default=16)
+    parser.add_argument("--learning-rate", type=float, default=2e-5)
+    parser.add_argument("--max-length", type=int, default=256)
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    config = TrainerConfig(
+        num_epochs=args.epochs,
+        batch_size=args.batch_size,
+        learning_rate=args.learning_rate,
+        max_length=args.max_length,
+        limit_train=args.limit_train,
+        limit_test=args.limit_test,
+        output_dir=str(args.output.parent / "trainer_checkpoints"),
+    )
+    metrics = run_trainer_pipeline(config)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(metrics, indent=2))
+    print(json.dumps(metrics, indent=2))
+
+
+if __name__ == "__main__":
+    main()

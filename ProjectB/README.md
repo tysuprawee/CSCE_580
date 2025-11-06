@@ -1,6 +1,8 @@
 # Project B: Fine-Tuning Sentiment Models on IMDB
 
-This project guides you through reproducing and extending the workflow described in the assignment brief for CSCE 580 (Fall 2025). You will compare transformer-based and classical sentiment analysis pipelines on the [IMDB Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/).
+This project now ships with reproducible code for the full workflow described in the CSCE 580 (Fall 2025) assignment brief. The implementation lives in `ProjectB/src/projectb` and the runnable entrypoints are under `ProjectB/scripts`. You will compare transformer-based and classical sentiment analysis pipelines on the [IMDB Movie Review Dataset](https://ai.stanford.edu/~amaas/data/sentiment/).
+
+> **Tip:** All training scripts default to small subsets (2k/1k examples) so they can be executed on the course VM. Increase the limits via command-line flags once you are ready for the full 25k/25k splits.
 
 ## 1. Dataset Overview
 - Download the IMDB dataset (train/test splits with 25k labeled reviews each).
@@ -43,19 +45,36 @@ Prepare written responses for the five reflection prompts in the brief, covering
 
 ## 7. Deliverables Checklist
 - ✅ Data splits, curated test cases, preprocessing scripts/notebooks.
-- ✅ Code for both fine-tuning runs and classical baselines.
+- ✅ Code for both fine-tuning runs and classical baselines (`ProjectB/scripts`).
 - ✅ Report (PDF/Markdown) containing:
   - Accuracy/loss curves, confusion matrices, comparative tables.
   - Answers to evaluation questions.
 - ✅ Optional: Hugging Face repo link and/or model card.
 
 ## 8. Suggested Workflow
-1. **Environment Setup:** Install `torch`, `transformers`, `datasets`, `scikit-learn`, `pandas`, `numpy`, `matplotlib/seaborn`.
-2. **Data Pipeline:** Implement reusable loaders for IMDB and curated cases.
-3. **Baseline Modeling:** Train classical models first to establish reference metrics.
-4. **Transformer Fine-Tuning:** Use the Trainer API; then replicate with a manual loop.
-5. **Evaluation & Visualization:** Automate metric computation and plotting.
-6. **Reporting:** Compile figures, tables, and written analysis into the final report.
+1. **Environment Setup**
+   ```bash
+   cd ProjectB
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -U pip
+   pip install -r requirements.txt
+   ```
+2. **Data Pipeline** – the utilities in `projectb.data` handle downloading IMDB, cleaning reviews, and splitting train/validation/test sets. Use them from notebooks or scripts.
+3. **Baseline Modeling** – run the classical pipelines first to sanity-check the cleaned text and generate baseline metrics:
+   ```bash
+   python scripts/train_classical.py --limit-train 8000 --limit-test 4000
+   ```
+4. **Transformer Fine-Tuning (Trainer API)** – start with the managed training loop:
+   ```bash
+   python scripts/train_with_trainer.py --epochs 3 --limit-train 4000 --limit-test 2000
+   ```
+5. **Transformer Fine-Tuning (Manual Loop)** – repeat with the custom PyTorch trainer to practice lower-level control:
+   ```bash
+   python scripts/train_manual.py --epochs 3 --limit-train 4000 --limit-test 2000 --batch-size 12
+   ```
+6. **Evaluation & Visualization** – the scripts emit JSON summaries (see `ProjectB/artifacts/`). Load them into notebooks to plot curves, confusion matrices, and tables.
+7. **Reporting** – compile figures, tables, and written analysis into the final report. Include comparisons between classical baselines and both DistilBERT fine-tuning strategies.
 
 ## 9. References
 - Hugging Face DistilBERT fine-tuning tutorial (PyTorch Trainer): <https://huggingface.co/blog/sentiment-analysis-python>
@@ -69,3 +88,31 @@ Prepare written responses for the five reflection prompts in the brief, covering
 - **Final Submission:** Thursday, Nov 20, 2025 (report + code + data artifacts).
 
 Document progress in a project log (e.g., `ProjectB/log.md`) noting experiments, hyperparameters, and observations.
+
+### Repository Layout
+```
+ProjectB/
+├── README.md                # Assignment brief + workflow
+├── requirements.txt         # Minimal dependency set
+├── scripts/
+│   ├── train_classical.py   # TF–IDF + LR / Naive Bayes baselines
+│   ├── train_manual.py      # Custom PyTorch fine-tuning loop
+│   └── train_with_trainer.py# Hugging Face Trainer wrapper
+├── src/projectb/
+│   ├── __init__.py
+│   ├── classical.py         # Classical ML utilities
+│   ├── cleaning.py          # Text normalisation helpers
+│   ├── data.py              # Dataset download/splitting/tokenisation
+│   ├── manual_training.py   # Manual PyTorch loop implementation
+│   ├── metrics.py           # Shared metric helpers
+│   └── trainer_workflow.py  # Trainer-based workflow
+└── tests/
+    └── test_cleaning.py     # Example pytest unit test
+```
+
+Activate the virtual environment and run `pytest` inside `ProjectB` to execute the included unit test:
+
+```bash
+cd ProjectB
+pytest
+```
