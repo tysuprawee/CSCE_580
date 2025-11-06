@@ -1,0 +1,17 @@
+[
+  {
+    "id": "short_positive",
+    "text": "A brisk, charming comedy that left me smiling long after the credits rolled.",
+    "label": 1
+  },
+  {
+    "id": "medium_negative",
+    "text": "Despite a promising cast, the film collapses under meandering pacing and shallow character arcs that never earn the big emotional swings it keeps telegraphing.",
+    "label": 0
+  },
+  {
+    "id": "long_mixed",
+    "text": "The documentary starts as a heartfelt love letter to the local music scene, weaving archival footage with earnest interviews, but the second half turns into a repetitive lecture that drains the energy and leaves the finale feeling oddly hollow despite the triumphant soundtrack.",
+    "label": 0
+  }
+]
