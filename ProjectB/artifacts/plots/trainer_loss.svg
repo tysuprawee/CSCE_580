@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" font-family="Arial">
+<rect x="0" y="0" width="640" height="400" fill="#ffffff" stroke="#e0e0e0"/>
+<line x1="60" y1="340" x2="580" y2="340" stroke="#000" stroke-width="1"/>
+<line x1="60" y1="60" x2="60" y2="340" stroke="#000" stroke-width="1"/>
+<text x="320.0" y="30.0" text-anchor="middle" font-size="18">Trainer Fine-Tuning Loss</text>
+<text x="20.0" y="200.0" text-anchor="middle" font-size="14" transform="rotate(-90 20.0,200.0)">Loss</text>
+<text x="320.0" y="390" text-anchor="middle" font-size="14">Epoch</text>
+<line x1="60.0" y1="340" x2="60.0" y2="345" stroke="#000"/>
+<text x="60.0" y="360" text-anchor="middle" font-size="12">1</text>
+<line x1="320.0" y1="340" x2="320.0" y2="345" stroke="#000"/>
+<text x="320.0" y="360" text-anchor="middle" font-size="12">2</text>
+<line x1="580.0" y1="340" x2="580.0" y2="345" stroke="#000"/>
+<text x="580.0" y="360" text-anchor="middle" font-size="12">3</text>
+<line x1="55" y1="340.0" x2="60" y2="340.0" stroke="#000"/>
+<text x="50" y="344.0" text-anchor="end" font-size="12">0.18</text>
+<line x1="55" y1="270.0" x2="60" y2="270.0" stroke="#000"/>
+<text x="50" y="274.0" text-anchor="end" font-size="12">0.22</text>
+<line x1="55" y1="199.99999999999997" x2="60" y2="199.99999999999997" stroke="#000"/>
+<text x="50" y="203.99999999999997" text-anchor="end" font-size="12">0.27</text>
+<line x1="55" y1="129.99999999999997" x2="60" y2="129.99999999999997" stroke="#000"/>
+<text x="50" y="133.99999999999997" text-anchor="end" font-size="12">0.31</text>
+<line x1="55" y1="60.0" x2="60" y2="60.0" stroke="#000"/>
+<text x="50" y="64.0" text-anchor="end" font-size="12">0.36</text>
+<polyline points="60.0,60.0 320.0,238.9 580.0,340.0" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<polyline points="60.0,119.1 320.0,161.1 580.0,196.9" fill="none" stroke="#ff7f0e" stroke-width="2"/>
+<rect x="430" y="60" width="12" height="12" fill="#1f77b4"/>
+<text x="448" y="70" font-size="12">Train Loss</text>
+<rect x="430" y="80" width="12" height="12" fill="#ff7f0e"/>
+<text x="448" y="90" font-size="12">Validation Loss</text>
+</svg>

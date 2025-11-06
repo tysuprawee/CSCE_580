@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" font-family="Arial">
+<rect x="0" y="0" width="640" height="400" fill="#ffffff" stroke="#e0e0e0"/>
+<line x1="60" y1="340" x2="580" y2="340" stroke="#000" stroke-width="1"/>
+<line x1="60" y1="60" x2="60" y2="340" stroke="#000" stroke-width="1"/>
+<text x="320.0" y="30.0" text-anchor="middle" font-size="18">Manual Accuracy</text>
+<text x="20.0" y="200.0" text-anchor="middle" font-size="14" transform="rotate(-90 20.0,200.0)">Accuracy</text>
+<text x="320.0" y="390" text-anchor="middle" font-size="14">Epoch</text>
+<line x1="60.0" y1="340" x2="60.0" y2="345" stroke="#000"/>
+<text x="60.0" y="360" text-anchor="middle" font-size="12">1</text>
+<line x1="320.0" y1="340" x2="320.0" y2="345" stroke="#000"/>
+<text x="320.0" y="360" text-anchor="middle" font-size="12">2</text>
+<line x1="580.0" y1="340" x2="580.0" y2="345" stroke="#000"/>
+<text x="580.0" y="360" text-anchor="middle" font-size="12">3</text>
+<line x1="55" y1="340.0" x2="60" y2="340.0" stroke="#000"/>
+<text x="50" y="344.0" text-anchor="end" font-size="12">0.84</text>
+<line x1="55" y1="269.99999999999994" x2="60" y2="269.99999999999994" stroke="#000"/>
+<text x="50" y="273.99999999999994" text-anchor="end" font-size="12">0.87</text>
+<line x1="55" y1="200.00000000000014" x2="60" y2="200.00000000000014" stroke="#000"/>
+<text x="50" y="204.00000000000014" text-anchor="end" font-size="12">0.89</text>
+<line x1="55" y1="130.00000000000009" x2="60" y2="130.00000000000009" stroke="#000"/>
+<text x="50" y="134.00000000000009" text-anchor="end" font-size="12">0.91</text>
+<line x1="55" y1="60.0" x2="60" y2="60.0" stroke="#000"/>
+<text x="50" y="64.0" text-anchor="end" font-size="12">0.94</text>
+<polyline points="60.0,340.0 320.0,153.3 580.0,60.0" fill="none" stroke="#9467bd" stroke-width="2"/>
+<polyline points="60.0,226.2 320.0,167.9 580.0,130.0" fill="none" stroke="#2ca02c" stroke-width="2"/>
+<rect x="430" y="60" width="12" height="12" fill="#9467bd"/>
+<text x="448" y="70" font-size="12">Train Accuracy</text>
+<rect x="430" y="80" width="12" height="12" fill="#2ca02c"/>
+<text x="448" y="90" font-size="12">Validation Accuracy</text>
+</svg>

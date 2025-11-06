@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" font-family="Arial">
+<rect x="0" y="0" width="360" height="360" fill="#ffffff" stroke="#e0e0e0"/>
+<text x="180.0" y="30.0" text-anchor="middle" font-size="18">Trainer Confusion Matrix</text>
+<rect x="60.0" y="60.0" width="120.0" height="120.0" fill="rgb(105, 105, 255)" stroke="#000"/>
+<text x="120.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">445</text>
+<text x="70.0" y="80.0" font-size="12">TN</text>
+<rect x="180.0" y="60.0" width="120.0" height="120.0" fill="rgb(243, 243, 255)" stroke="#000"/>
+<text x="240.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">35</text>
+<text x="190.0" y="80.0" font-size="12">FP</text>
+<rect x="60.0" y="180.0" width="120.0" height="120.0" fill="rgb(234, 234, 255)" stroke="#000"/>
+<text x="120.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">60</text>
+<text x="70.0" y="200.0" font-size="12">FN</text>
+<rect x="180.0" y="180.0" width="120.0" height="120.0" fill="rgb(100, 100, 255)" stroke="#000"/>
+<text x="240.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">460</text>
+<text x="190.0" y="200.0" font-size="12">TP</text>
+<text x="30.0" y="180.0" text-anchor="middle" font-size="14" transform="rotate(-90 30.0,180.0)">Actual</text>
+<text x="180.0" y="345.0" text-anchor="middle" font-size="14">Predicted</text>
+</svg>
