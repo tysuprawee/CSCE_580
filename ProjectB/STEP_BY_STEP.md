@@ -66,6 +66,10 @@ python scripts/train_with_trainer.py \
     --output artifacts/trainer_metrics.json
 ```
 
+Both the hyphenated flags shown above and the underscore versions (for example,
+`--train_batch_size`) are accepted, so feel free to use whichever style matches
+your shell history or personal notes.
+
 Artifacts produced:
 
 * `artifacts/trainer_metrics.json` – per-epoch loss/accuracy plus evaluation metrics
