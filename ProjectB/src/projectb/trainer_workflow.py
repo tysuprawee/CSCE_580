@@ -33,7 +33,8 @@ class TrainerConfig:
     model_name: str = "distilbert-base-uncased"
     output_dir: str = "artifacts/trainer"
     learning_rate: float = 2e-5
-    batch_size: int = 16
+    train_batch_size: int = 16
+    eval_batch_size: int = 32
     num_epochs: int = 2
     weight_decay: float = 0.01
     max_length: int = 256
@@ -137,8 +138,8 @@ def run_trainer_pipeline(config: TrainerConfig) -> dict:
     training_args = TrainingArguments(
         output_dir=config.output_dir,
         learning_rate=config.learning_rate,
-        per_device_train_batch_size=config.batch_size,
-        per_device_eval_batch_size=config.batch_size,
+        per_device_train_batch_size=config.train_batch_size,
+        per_device_eval_batch_size=config.eval_batch_size,
         num_train_epochs=config.num_epochs,
         weight_decay=config.weight_decay,
         evaluation_strategy=config.evaluation_strategy,
@@ -177,6 +178,6 @@ def run_trainer_pipeline(config: TrainerConfig) -> dict:
         "testcases": _score_testcases(trainer, tokenizer, config.max_length),
         "training_summary": {
             "train_runtime": trainer.state.train_runtime,
-            "train_samples": trainer.state.global_step * config.batch_size,
+            "train_samples": trainer.state.global_step * config.train_batch_size,
         },
     }
