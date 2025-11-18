@@ -24,12 +24,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument(
         "--train-batch-size",
+        "--train_batch_size",
+        dest="train_batch_size",
         type=int,
         default=None,
         help="Per-device batch size used during training.",
     )
     parser.add_argument(
         "--eval-batch-size",
+        "--eval_batch_size",
+        dest="eval_batch_size",
         type=int,
         default=None,
         help="Per-device batch size used during evaluation.",
