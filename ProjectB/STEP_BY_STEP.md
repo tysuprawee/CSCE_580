@@ -37,6 +37,11 @@ python -c "from datasets import load_dataset; ds = load_dataset('imdb'); print(d
 
 Optional: Save a local copy for offline use by passing `--cache-dir <path>` to any script.
 
+**Offline/air-gapped tip:** If your network blocks direct dataset downloads, grab the
+parquet files once (e.g., `huggingface-cli download stanfordnlp/imdb`) and pass
+`--dataset-path /path/to/stanfordnlp/imdb` to the training scripts. The loader
+will auto-detect `plain_text/train-*.parquet` and `test-*.parquet` files.
+
 ---
 
 ## 3. Generate Baseline Features (Classical Models)
@@ -63,8 +68,13 @@ python scripts/train_with_trainer.py \
     --eval-batch-size 32 \
     --limit-train 25000 \
     --limit-test 25000 \
+    --dataset-path /path/to/local/imdb/parquet \
     --output artifacts/trainer_metrics.json
 ```
+
+Both the hyphenated flags shown above and the underscore versions (for example,
+`--train_batch_size`) are accepted, so feel free to use whichever style matches
+your shell history or personal notes.
 
 Artifacts produced:
 
@@ -73,6 +83,10 @@ Artifacts produced:
 * `artifacts/trainer_confusion.npy` – confusion matrix saved as a NumPy array
 
 **GPU tip:** Add `--no-cuda` to force CPU execution; remove `--limit-*` flags to use the entire dataset.
+
+**Dataset overrides:** The trainer CLI also exposes `--dataset-name` (default
+`imdb`), `--dataset-cache-dir`, and `--dataset-path` to match whatever Hugging
+Face mirror or local parquet dump you have access to.
 
 ---
 

@@ -24,12 +24,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument(
         "--train-batch-size",
+        "--train_batch_size",
+        dest="train_batch_size",
         type=int,
         default=None,
         help="Per-device batch size used during training.",
     )
     parser.add_argument(
         "--eval-batch-size",
+        "--eval_batch_size",
+        dest="eval_batch_size",
         type=int,
         default=None,
         help="Per-device batch size used during evaluation.",
@@ -42,6 +46,24 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--learning-rate", type=float, default=2e-5)
     parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument(
+        "--dataset-name",
+        type=str,
+        default="imdb",
+        help="Dataset builder or repo ID passed to datasets.load_dataset().",
+    )
+    parser.add_argument(
+        "--dataset-path",
+        type=Path,
+        default=None,
+        help="Optional path to local IMDB parquet files (e.g., hf:// downloads).",
+    )
+    parser.add_argument(
+        "--dataset-cache-dir",
+        type=Path,
+        default=None,
+        help="Cache directory forwarded to datasets.load_dataset().",
+    )
     return parser.parse_args()
 
 
@@ -64,6 +86,11 @@ def main() -> None:
         limit_train=args.limit_train,
         limit_test=args.limit_test,
         output_dir=str(args.output.parent / "trainer_checkpoints"),
+        dataset_name=args.dataset_name,
+        dataset_path=str(args.dataset_path) if args.dataset_path else None,
+        dataset_cache_dir=str(args.dataset_cache_dir)
+        if args.dataset_cache_dir
+        else None,
     )
     metrics = run_trainer_pipeline(config)
     args.output.parent.mkdir(parents=True, exist_ok=True)

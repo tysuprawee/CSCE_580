@@ -97,10 +97,65 @@ def tokenize_testcases(
     return testcases, tokenised
 
 
-def load_raw_imdb(cache_dir: Optional[str] = None) -> DatasetDict:
-    """Load the IMDB dataset using 🤗 Datasets."""
+def load_raw_imdb(
+    cache_dir: Optional[str] = None,
+    *,
+    dataset_name: str = "imdb",
+    dataset_path: Optional[str] = None,
+) -> DatasetDict:
+    """Load the IMDB dataset using 🤗 Datasets or local parquet files.
 
-    return load_dataset("imdb", cache_dir=cache_dir)
+    Args:
+        cache_dir: Optional path to reuse 🤗 Datasets caches.
+        dataset_name: Dataset builder or repository name passed to
+            :func:`datasets.load_dataset` when ``dataset_path`` is ``None``.
+        dataset_path: When provided, load ``train``/``test`` splits from parquet
+            files stored on disk. This mirrors the file layout produced by
+            ``huggingface-cli download stanfordnlp/imdb`` (for example,
+            ``plain_text/train-00000-of-00001.parquet``).
+    """
+
+    if dataset_path is not None:
+        return _load_local_imdb_from_parquet(Path(dataset_path))
+
+    return load_dataset(dataset_name, cache_dir=cache_dir)
+
+
+def _load_local_imdb_from_parquet(base_path: Path) -> DatasetDict:
+    """Load IMDB splits from parquet files saved on disk.
+
+    The helper searches recursively under ``base_path`` for files named
+    ``train*.parquet`` and ``test*.parquet`` so it works with both flat
+    directories as well as the ``plain_text`` subfolder distributed on the
+    Hugging Face Hub.
+    """
+
+    if not base_path.exists():
+        raise FileNotFoundError(f"Dataset path '{base_path}' does not exist")
+
+    def _split_files(split: str) -> list[str]:
+        files = sorted(str(path) for path in base_path.rglob(f"{split}*.parquet"))
+        if not files:
+            raise FileNotFoundError(
+                f"Could not find any parquet files for split '{split}' under {base_path}"
+            )
+        return files
+
+    train_files = _split_files("train")
+    test_files = _split_files("test")
+
+    datasets = {
+        "train": Dataset.from_parquet(train_files),
+        "test": Dataset.from_parquet(test_files),
+    }
+
+    unsupervised_files = list(base_path.rglob("unsupervised*.parquet"))
+    if unsupervised_files:
+        datasets["unsupervised"] = Dataset.from_parquet(
+            [str(path) for path in unsupervised_files]
+        )
+
+    return DatasetDict(datasets)
 
 
 def _clean_dataset(ds: Dataset) -> Dataset:
