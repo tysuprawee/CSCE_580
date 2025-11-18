@@ -22,7 +22,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit-train", type=int, default=2000, help="Limit the number of training examples (for faster experimentation).")
     parser.add_argument("--limit-test", type=int, default=1000, help="Limit the number of test examples.")
     parser.add_argument("--epochs", type=int, default=2)
-    parser.add_argument("--batch-size", type=int, default=16)
+    parser.add_argument(
+        "--train-batch-size",
+        type=int,
+        default=None,
+        help="Per-device batch size used during training.",
+    )
+    parser.add_argument(
+        "--eval-batch-size",
+        type=int,
+        default=None,
+        help="Per-device batch size used during evaluation.",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=None,
+        help="(deprecated) Sets both the train and eval batch size.",
+    )
     parser.add_argument("--learning-rate", type=float, default=2e-5)
     parser.add_argument("--max-length", type=int, default=256)
     return parser.parse_args()
@@ -30,9 +47,18 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    batch_size_arg = args.batch_size
+    train_batch_size = args.train_batch_size
+    eval_batch_size = args.eval_batch_size
+    if train_batch_size is None:
+        train_batch_size = batch_size_arg if batch_size_arg is not None else 16
+    if eval_batch_size is None:
+        eval_batch_size = batch_size_arg if batch_size_arg is not None else 32
+
     config = TrainerConfig(
         num_epochs=args.epochs,
-        batch_size=args.batch_size,
+        train_batch_size=train_batch_size,
+        eval_batch_size=eval_batch_size,
         learning_rate=args.learning_rate,
         max_length=args.max_length,
         limit_train=args.limit_train,
