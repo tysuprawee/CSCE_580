@@ -62,14 +62,13 @@ Artifacts produced:
 ## 4. Fine-Tune DistilBERT with Hugging Face Trainer
 
 ```bash
-python scripts/train_with_trainer.py \
-    --epochs 3 \
-    --train-batch-size 16 \
-    --eval-batch-size 32 \
-    --limit-train 25000 \
-    --limit-test 25000 \
-    --dataset-path /path/to/local/imdb/parquet \
-    --output artifacts/trainer_metrics.json
+python .\scripts\train_with_trainer.py `
+    --epochs 3 `
+    --train-batch-size 16 `
+    --eval-batch-size 32 `
+    --limit-train 25000 `
+    --limit-test 25000 `
+    --output "artifacts\trainer_metrics.json"
 ```
 
 Both the hyphenated flags shown above and the underscore versions (for example,
