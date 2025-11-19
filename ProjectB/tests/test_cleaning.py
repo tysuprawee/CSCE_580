@@ -1,4 +1,4 @@
-from projectb.cleaning import clean_review
+from src.projectb.cleaning import clean_review
 
 
 def test_clean_review_removes_html_and_whitespace():

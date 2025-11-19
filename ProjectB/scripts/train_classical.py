@@ -13,7 +13,7 @@ SRC_DIR = PROJECT_ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-from projectb.classical import ClassicalConfig, train_classical_models
+from src.projectb.classical import ClassicalConfig, train_classical_models
 
 
 def parse_args() -> argparse.Namespace:

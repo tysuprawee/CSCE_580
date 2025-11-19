@@ -6,7 +6,7 @@ import argparse
 import json
 from pathlib import Path
 
-from projectb import BaselineConfig, evaluate_base_distilbert, evaluate_gpt_classifier
+from src.projectb import BaselineConfig, evaluate_base_distilbert, evaluate_gpt_classifier
 
 
 def _write_json(data, path: Path) -> None:
