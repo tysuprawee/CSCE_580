@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" font-family="Arial">
 <rect x="0" y="0" width="360" height="360" fill="#ffffff" stroke="#e0e0e0"/>
 <text x="180.0" y="30.0" text-anchor="middle" font-size="18">Logistic Regression Confusion Matrix</text>
-<rect x="60.0" y="60.0" width="120.0" height="120.0" fill="rgb(105, 105, 255)" stroke="#000"/>
-<text x="120.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">400</text>
+<rect x="60.0" y="60.0" width="120.0" height="120.0" fill="rgb(101, 101, 255)" stroke="#000"/>
+<text x="120.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">11111</text>
 <text x="70.0" y="80.0" font-size="12">TN</text>
-<rect x="180.0" y="60.0" width="120.0" height="120.0" fill="rgb(226, 226, 255)" stroke="#000"/>
-<text x="240.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">75</text>
+<rect x="180.0" y="60.0" width="120.0" height="120.0" fill="rgb(235, 235, 255)" stroke="#000"/>
+<text x="240.0" y="120.0" text-anchor="middle" font-size="20" dominant-baseline="middle">1389</text>
 <text x="190.0" y="80.0" font-size="12">FP</text>
-<rect x="60.0" y="180.0" width="120.0" height="120.0" fill="rgb(213, 213, 255)" stroke="#000"/>
-<text x="120.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">110</text>
+<rect x="60.0" y="180.0" width="120.0" height="120.0" fill="rgb(237, 237, 255)" stroke="#000"/>
+<text x="120.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">1264</text>
 <text x="70.0" y="200.0" font-size="12">FN</text>
 <rect x="180.0" y="180.0" width="120.0" height="120.0" fill="rgb(100, 100, 255)" stroke="#000"/>
-<text x="240.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">415</text>
+<text x="240.0" y="240.0" text-anchor="middle" font-size="20" dominant-baseline="middle">11236</text>
 <text x="190.0" y="200.0" font-size="12">TP</text>
 <text x="30.0" y="180.0" text-anchor="middle" font-size="14" transform="rotate(-90 30.0,180.0)">Actual</text>
 <text x="180.0" y="345.0" text-anchor="middle" font-size="14">Predicted</text>

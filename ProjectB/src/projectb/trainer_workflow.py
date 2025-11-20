@@ -202,7 +202,9 @@ def run_trainer_pipeline(config: TrainerConfig) -> dict:
         compute_metrics=compute_metrics,
     )
 
-    trainer.train()
+    # Run training and capture metrics instead of relying on trainer.state.train_runtime
+    train_result = trainer.train()
+    train_metrics = dict(train_result.metrics or {})
 
     val_predictions = trainer.predict(tokenised.validation)
     val_preds = np.argmax(val_predictions.predictions, axis=-1)
@@ -220,7 +222,9 @@ def run_trainer_pipeline(config: TrainerConfig) -> dict:
         "test": {"loss": test_loss, "report": test_report.as_dict()},
         "testcases": _score_testcases(trainer, tokenizer, config.max_length),
         "training_summary": {
-            "train_runtime": trainer.state.train_runtime,
-            "train_samples": trainer.state.global_step * config.train_batch_size,
+            "train_runtime": float(train_metrics.get("train_runtime", 0.0)),
+            "train_samples": int(
+                train_metrics.get("train_samples", len(tokenised.train))
+            ),
         },
     }

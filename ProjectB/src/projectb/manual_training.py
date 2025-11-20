@@ -8,13 +8,13 @@ from typing import Dict, Optional
 import torch
 from torch.utils.data import DataLoader
 from transformers import (
-    AdamW,
     AutoModelForSequenceClassification,
     AutoTokenizer,
     DataCollatorWithPadding,
-    PreTrainedTokenizerBase,
     get_linear_schedule_with_warmup,
 )
+
+from torch.optim import AdamW
 
 from .data import (
     PreparedSplits,
