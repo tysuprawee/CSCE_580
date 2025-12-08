@@ -10,4 +10,5 @@ Course materials, projects, and assessments for **CSCE 580: Introduction to AI**
 | Quiz 1 | `quiz1/` | ✅ Complete | Concept responses, resume word-frequency analysis, and fire station call log notebooks. |
 | Quiz 2 | `quiz2/` | ✅ Complete | Energy comparisons, recipe conversion experiments, and rubric evaluation utilities for the second quiz. |
 | Quiz 3 | `quiz3/` | ✅ Complete |  |
+| Final Exam | `finals/` | ✅ Complete | Solutions for Q1a and Q2 (Attendance Audit). |
 
