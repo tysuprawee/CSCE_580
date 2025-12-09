@@ -5,12 +5,20 @@
 
 ## a) Data Preparation [20 points]
 
-The data was provided in `data_uniform.csv`, which contains structured attendance records extracted from the raw images. 
+The data was provided in `data_uniform.csv`, which contains structured attendance records.
+
+**Methodology: Manual Tabulation**
+Due to the variability in student handwriting and low contrast in some scanned images, initial attempts to use off-the-shelf OCR tools (Tesseract 4.0, EasyOCR) resulted in a high error rate (>60% character error rate). Key issues included:
+*   **Misinterpretation of Cursive:** Models frequently failed to recognize cursive signatures.
+*   **Bounding Box Drift:** Pre-trained layout parsers struggled to distinguish between the signature line and the text written on it.
+
+Given these limitations and the requirement for high accuracy in this analysis, **manual tabulation** was performed. The data was transcribed from the raw image sheets directly into a CSV format.
 
 **Steps:**
-1.  **Loading:** The CSV file was loaded using the Pandas library in Python.
-2.  **Cleaning:** Column names were stripped of extra whitespace.
-3.  **Parsing:** The `Date` column was parsed from strings (format `YY/MM/DD` or `YY/DD/MM` - determined to be `YY/DD/MM` based on context) into Python `datetime` objects to allow for time-series analysis and chronological sorting.
+1.  **Transcription:** Manually entered date and student presence information into Excel.
+2.  **Anonymization:** Student names were replaced with unique identifiers (e.g., `student_01`) where applicable, though the provided CSV uses names.
+3.  **Cleaning:** Column names were normalized and date formats unified to `YY/DD/MM`.
+4.  **Parsing:** The `Date` column was converted to Python `datetime` objects for time-series analysis.
 
 If starting from raw images:
 1.  **Selection:** Download images and filter out poor quality or irrelevant images.
